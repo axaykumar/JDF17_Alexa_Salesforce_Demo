@@ -140,7 +140,7 @@ function GetLatestUpdateForCase(req,res,intent) {
 
 function PostCaseFollowUp(req,res,intent) {
   
-	org.apexRest({oauth:intent.oauth, uri:'CaseControlFollowup',method:'POST  '}, 
+	org.apexRest({oauth:intent.oauth, uri:'CaseControlFollowup',method:'POST'}, 
 	function(err,result) {
 		if(err) {
 		  console.log(err);
@@ -195,7 +195,7 @@ function route_alexa_begin(req, res) {
    if(req.body.session == null || req.body.session.user == null || req.body.session.user.accessToken == null) {
         send_alexa_response(res, 'Please log into Salesforce', 'Salesforce', 'Not Logged In', 'Error: Not Logged In', true);
    } else {
-   		send_alexa_response(res, 'Connected to Salesforce',  'Connectedt to Salesforce', 'Connection Attempt', 'Logged In (Single User)', false);
+   		send_alexa_response(res, 'Connected to Salesforce',  'Connected to Salesforce', 'Connection Attempt', 'Logged In (Single User)', false);
    }
    
    console.log('!----REQUEST SESSION--------!');
