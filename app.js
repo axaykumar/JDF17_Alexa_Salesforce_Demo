@@ -71,7 +71,7 @@ intent_functions['GetOpportunityWonToday'] = GetOpportunityWonToday;
 intent_functions['GetCriticalCasesClosedToday'] = GetCriticalCasesClosedToday;
 intent_functions['GetCaseForAccount'] = GetCaseForAccount;
 intent_functions['GetLatestUpdateForCase'] = GetLatestUpdateForCase;
-intent_functions['CaseFollowUp'] = PostCaseFollowUp;
+intent_functions['CaseFollowup'] = PostCaseFollowUp;
 
 function GetOpportunityWonToday(req,res,intent) {
   
