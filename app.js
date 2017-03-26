@@ -147,7 +147,7 @@ function PostCaseFollowUp(req,res,intent) {
 		  send_alexa_error(res,'An error occured getting the latest update for this case: '+err);
 		}else{	
 		  console.log(result);	
-		  send_alexa_response(res, 'I have posted a request to follow up with the customer on the chatter feed for this case.', 'Case Summary', 'Latest Update', 'Here is the latest comment from this case. '+ result'I have posted a request to follow up with the customer on the chatter feed for this case.', true);
+		  send_alexa_response(res, 'I have posted a request to follow up with the customer on the chatter feed for this case.', 'Case Summary', 'Submitted Follow up request.', 'I have posted a request to follow up with the customer on the chatter feed for this case.', true);
 		}
 	});
 }
