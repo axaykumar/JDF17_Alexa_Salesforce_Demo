@@ -1,58 +1,25 @@
+GetOpportunityWonToday what is the total amount of opportunities that we won today
+GetOpportunityWonToday did we win any opportunities today
+GetOpportunityWonToday did we close any opportunities today
+GetCriticalCasesClosedToday how many critical cases got closed today
+GetCriticalCasesClosedToday how many critical cases closed today
+GetCriticalCasesClosedToday how many critical cases we closed today
+GetCriticalCasesClosedToday any critical cases closed today
+GetCriticalCasesClosedToday critical cases we closed today
+GetCriticalCasesClosedToday critical cases closed today
+GetCriticalCasesClosedToday total critical cases closed today
+GetCriticalCasesClosedToday how many critical case got closed today
+GetCriticalCasesClosedToday how many critical case closed today
+GetCriticalCasesClosedToday how many critical case we closed today
+GetCriticalCasesClosedToday any critical case closed today
+GetCriticalCasesClosedToday critical case we closed today
+GetCriticalCasesClosedToday critical case closed today
+GetCriticalCasesClosedToday total critical case closed today
+GetCaseForAccount do we have any for {accountName}
+CaseFollowup Plesase request a follow up meeting with the customer tomorrow
+CaseFollowup request a follow up meeting with the customer tomorrow
+CaseFollowup follow up meeting with the customer tomorrow
+GetLatestUpdateForCase What is the latest on this case
+GetLatestUpdateForCase What is the last comment on this case
+GetLatestUpdateForCase What is the last update on this case
 PleaseWait wait
-
-GetCurrentCase open current case
-GetCurrentCase open my case
-GetCurrentCase open case
-GetCurrentCase more information
-
-GetLatestCases get my latest cases
-GetLatestCases get latest cases
-
-OpenCase open case {one|number}
-OpenCase open case {zero zero zero zero one zero zero zero|number}
-OpenCase open case {five|number}
-OpenCase open case {five two five three one zero four two|number}
-
-OpenCase open case number {one|number}
-OpenCase open case number  {zero zero zero zero one zero zero zero|number}
-OpenCase open case number  {five|number}
-OpenCase open case number  {five two five three one zero four two|number}
-
-AddPost post to chatter {something random text|post}
-AddPost chatter {follow up call|post}
-AddPost chatter {next meeting|post}
-AddPost chatter {cannot replicate|post}
-AddPost chatter {missing info|post}
-
-UpdateCase update case {low|update}
-UpdateCase update case to {low|update}
-
-UpdateCase update case {medium|update}
-UpdateCase update case to {medium|update}
-
-UpdateCase update case {high|update}
-UpdateCase update case to {high|update}
-
-UpdateCase update case {working|update}
-UpdateCase update case to {working|update}
-
-UpdateCase update status {working|update}
-UpdateCase update status to {working|update}
-
-UpdateCase update case {new|update}
-UpdateCase update case to {new|update}
-
-UpdateCase update status {new|update}
-UpdateCase update status to {new|update}
-
-UpdateCase update case {closed|update}
-UpdateCase update case to {closed|update}
-
-UpdateCase update status {closed|update}
-UpdateCase update status to {closed|update}
-
-UpdateCase update case {closed|update}
-UpdateCase update case to {closed|update}
-
-UpdateCase update status {escalated|update}
-UpdateCase update status to {escalated|update}
