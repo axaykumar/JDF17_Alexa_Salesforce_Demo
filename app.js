@@ -104,7 +104,7 @@ function GetCaseForAccount(req, res, intent) {
 		  let message = '';
 		  if(result ===true)
 		  {
-		  message = 'Yes we do have a case for '+ post ' which was closed today.';
+		  message = 'Yes we do have a case for '+ post + ' which was closed today.';
 		  }
 		  else
 		  {
