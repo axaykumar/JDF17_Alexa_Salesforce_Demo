@@ -145,7 +145,7 @@ function SayGoodBye(req,res,intent) {
 	org.apexRest({oauth:intent.oauth, uri:'GetClosedDate',method:'GET'}, 
 	function(err,result) {
 		  send_alexa_response(res, 'Good Bye!', 'Say Bye', 'GoodBye!', true);
-		}
+		
 	});
   
 		  
