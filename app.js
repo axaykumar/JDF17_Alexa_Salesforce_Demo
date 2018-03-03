@@ -73,6 +73,40 @@ intent_functions['GetCaseForAccount'] = GetCaseForAccount;
 intent_functions['GetLatestUpdateForCase'] = GetLatestUpdateForCase;
 intent_functions['CaseFollowup'] = PostCaseFollowUp;
 
+/**** New Use Cases ***/
+intent_functions['UpdateOpportunity'] = UpdateOpportunity;
+intent_functions['GetClosedDate'] = GetClosedDate;
+intent_functions['UpdateCloseDate'] = UpdateCloseDate;
+intent_functions['SayGoodBye'] = SayGoodBye;
+
+/*************** New Use Case -- Start ***************/
+
+
+function UpdateOpportunity(req, res, intent) {	
+	
+	console.log("intent " + intent.slots.accountName);
+	var post = intent.slots.accountName.value;
+	console.log("Account Name>>>>"+post);
+	
+	org.apexRest({oauth:intent.oauth, uri:'UpdateOpportunity',method:'POST', body:'{"accountName":"'+post+'"}'},
+	function(err,result) {
+		if(err) {
+		  console.log(err);
+		  send_alexa_error(res,'An error occured while fetching opportunity details: '+err);
+		}else{	
+		  console.log(result);
+		  let message = '';
+		  
+		  
+		  	  send_alexa_response(res, 'Ok, I’ve pulled up the opportunity for '+post+', it’s currently forcasted at '+result+'. What would you like to change?', 'Opportunity Summary', 'Opportunity Details', 'test', false);
+		}
+	});
+}
+
+
+
+/****************** New Use Case -- END *************/
+
 function GetOpportunityWonToday(req,res,intent) {
   
 	org.apexRest({oauth:intent.oauth, uri:'OpportunityControlREST',method:'GET'}, 
