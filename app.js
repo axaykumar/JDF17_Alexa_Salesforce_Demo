@@ -75,9 +75,9 @@ intent_functions['CaseFollowup'] = PostCaseFollowUp;
 
 /**** New Use Cases ***/
 intent_functions['UpdateOpportunity'] = UpdateOpportunity;
-intent_functions['GetClosedDate'] = GetClosedDate;
-intent_functions['UpdateCloseDate'] = UpdateCloseDate;
-intent_functions['SayGoodBye'] = SayGoodBye;
+//intent_functions['GetClosedDate'] = GetClosedDate;
+//intent_functions['UpdateCloseDate'] = UpdateCloseDate;
+//intent_functions['SayGoodBye'] = SayGoodBye;
 
 /*************** New Use Case -- Start ***************/
 
