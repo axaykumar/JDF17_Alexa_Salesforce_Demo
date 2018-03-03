@@ -119,7 +119,7 @@ function UpdateCloseDate(req, res, intent) {
 		  let message = '';
 		  
 		  
-		  	  send_alexa_response(res, 'I’ve updated the close date to ' + post ' . Anything else?', 'Opportunity Updated', 'Opportunity Updated', 'I’ve updated the close date to ' + post ' . Anything else?', false);
+		  	  send_alexa_response(res, 'I’ve updated the close date to ' + post + ' . Anything else?', 'Opportunity Updated', 'Opportunity Updated', 'I’ve updated the close date to ' + post +' . Anything else?', false);
 		}
 	});
 }
