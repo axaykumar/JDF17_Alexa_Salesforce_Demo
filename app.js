@@ -142,8 +142,9 @@ function GetClosedDate(req,res,intent) {
 
 
 function SayGoodBye(req,res,intent) {
+		  send_alexa_response(res, 'Good Bye!', 'GoodBye', 'Say Bye', 'GoodBye!', false);
+		
 	
-  send_alexa_response(res, 'Good Bye!', 'Say Bye', 'GoodBye!', false);
 		  
 };	
 
