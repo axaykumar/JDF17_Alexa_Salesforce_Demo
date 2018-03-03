@@ -126,21 +126,6 @@ function UpdateCloseDate(req, res, intent) {
 
 
 
-function GetOpportunityWonToday(req,res,intent) {
-  
-	org.apexRest({oauth:intent.oauth, uri:'OpportunityControlREST',method:'GET'}, 
-	function(err,result) {
-		if(err) {
-		  console.log(err);
-		  send_alexa_error(res,'An error occured getting the total amount of opportunities won today: '+err);
-		}else{	
-		  console.log(result);	
-		  send_alexa_response(res, 'We won dollar '+ result +' worth of opportunities today.', 'Opportunity Details', 'Total Closed-Won Opportunities', 'We closed $'+ result +' worth of opportunities today.', true);
-		}
-	});
-}
-
-
 function GetClosedDate(req,res,intent) {
   
 	org.apexRest({oauth:intent.oauth, uri:'GetClosedDate',method:'GET'}, 
@@ -157,13 +142,34 @@ function GetClosedDate(req,res,intent) {
 
 
 function SayGoodBye(req,res,intent) {
-  
+	org.apexRest({oauth:intent.oauth, uri:'GetClosedDate',method:'GET'}, 
+	function(err,result) {
 		  send_alexa_response(res, 'Good Bye!', 'Say Bye', 'GoodBye!', true);
+		}
+	});
+  
+		  
 };	
 
 /****************** New Use Case -- END *************/
 
 
+
+
+
+function GetOpportunityWonToday(req,res,intent) {
+  
+	org.apexRest({oauth:intent.oauth, uri:'OpportunityControlREST',method:'GET'}, 
+	function(err,result) {
+		if(err) {
+		  console.log(err);
+		  send_alexa_error(res,'An error occured getting the total amount of opportunities won today: '+err);
+		}else{	
+		  console.log(result);	
+		  send_alexa_response(res, 'We won dollar '+ result +' worth of opportunities today.', 'Opportunity Details', 'Total Closed-Won Opportunities', 'We closed $'+ result +' worth of opportunities today.', true);
+		}
+	});
+}
 
 function GetCaseForAccount(req, res, intent) {	
 	console.log("intent " + intent.slots);
