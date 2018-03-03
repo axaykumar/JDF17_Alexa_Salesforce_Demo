@@ -75,9 +75,9 @@ intent_functions['CaseFollowup'] = PostCaseFollowUp;
 
 /**** New Use Cases ***/
 intent_functions['UpdateOpportunity'] = UpdateOpportunity;
-//intent_functions['GetClosedDate'] = GetClosedDate;
-//intent_functions['UpdateCloseDate'] = UpdateCloseDate;
-//intent_functions['SayGoodBye'] = SayGoodBye;
+intent_functions['GetClosedDate'] = GetClosedDate;
+intent_functions['UpdateCloseDate'] = UpdateCloseDate;
+intent_functions['SayGoodBye'] = SayGoodBye;
 
 /*************** New Use Case -- Start ***************/
 
@@ -103,9 +103,28 @@ function UpdateOpportunity(req, res, intent) {
 	});
 }
 
+function UpdateCloseDate(req, res, intent) {	
+	
+	console.log("intent " + intent.slots.newClosedDate);
+	var post = intent.slots.newClosedDate.value;
+	console.log("Date>>>>"+post);
+	
+	org.apexRest({oauth:intent.oauth, uri:'UpdateCloseDate',method:'POST', body:'{"newClosedDate":"'+post+'"}'},
+	function(err,result) {
+		if(err) {
+		  console.log(err);
+		  send_alexa_error(res,'An error occured while fetching opportunity details: '+err);
+		}else{	
+		  console.log(result);
+		  let message = '';
+		  
+		  
+		  	  send_alexa_response(res, 'Test', 'Opportunity Updated', 'Opportunity Updated', 'test', true);
+		}
+	});
+}
 
 
-/****************** New Use Case -- END *************/
 
 function GetOpportunityWonToday(req,res,intent) {
   
@@ -120,6 +139,30 @@ function GetOpportunityWonToday(req,res,intent) {
 		}
 	});
 }
+
+
+function GetClosedDate(req,res,intent) {
+  
+	org.apexRest({oauth:intent.oauth, uri:'GetClosedDate',method:'GET'}, 
+	function(err,result) {
+		if(err) {
+		  console.log(err);
+		  send_alexa_error(res,'An error occured getting the closed date for the opportunity: '+err);
+		}else{	
+		  console.log(result);	
+		  send_alexa_response(res, 'The close date is ' + result, 'Opportunity Details', 'Close Date of Opporunity', 'The close date is' + result, false);
+		}
+	});
+}
+
+
+function SayGoodBye(req,res,intent) {
+  
+		  send_alexa_response(res, 'Good Bye!', 'Say Bye', 'GoodBye!', true);
+	
+
+/****************** New Use Case -- END *************/
+
 
 
 function GetCaseForAccount(req, res, intent) {	
